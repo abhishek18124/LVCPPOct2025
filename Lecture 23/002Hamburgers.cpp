@@ -46,7 +46,7 @@ int p_b, p_s, p_c; // to store the price of 'B', 'S' and 'C'
 int c_b, c_s, c_c;  // to store the frequencies of 'B', 'S' and 'C' hamburger's recipe
 ll r;             // to store the money Polycarpus has
 
-bool canPolycarpusCook(ll m) {
+bool canPolycarpusCook(ll m) { // const
 
     // check if Polycarpus can cook 'm' hamburgers ?
 
@@ -70,7 +70,7 @@ int main() {
     cin >> p_b >> p_s >> p_c;
     cin >> r;
 
-    for (char c : s) {
+    for (char c : s) { // max length of the string is 100 so const
         if (c == 'B') {
             c_b++;
         }
@@ -87,7 +87,7 @@ int main() {
 
     ll ans = 0; // to track max. no. of hamburgers Polycarpus can make
 
-    while (lo <= hi) {
+    while (lo <= hi) { // log(hi-lo) // log(10^12) ~ 40 iterations
         ll m = lo + (hi - lo) / 2;
         if (canPolycarpusCook(m)) {
             // Polycarpus can cook 'm' hamburgers therefore move right
