@@ -26,6 +26,9 @@ public:
     }
 };
 
+// time : O(nklogk)
+// space: O(k) due to minHeap
+
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
