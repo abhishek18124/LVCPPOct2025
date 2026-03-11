@@ -1,0 +1,87 @@
+/*
+	Given N cartesian points in a 2D plane, count the number of right-angled triangles that
+	can be formed such that the base or perpendicular is parallel to the x-axis or y-axis.
+
+	Examples
+
+	Input : {(0, 0),
+	         (2, 0),
+	         (0, 1)}
+
+	Output: 1
+
+	Input : {(1, 2),
+			 (2, 0),
+			 (2, 2),
+			 (2, 3),
+			 (4, 2)}
+
+	Output: 4
+*/
+
+#include<iostream>
+#include<vector>
+#include<unordered_map>
+
+using namespace std;
+
+class Point {
+public:
+	int x;
+	int y;
+
+	Point(int x, int y) {
+		this->x = x;
+		this->y = y;
+	}
+};
+
+int main() {
+
+	vector<Point> points = {
+		Point(1, 2),
+		Point(2, 0),
+		Point(2, 2),
+		Point(2, 3),
+		Point(4, 2)
+	};
+
+	// time : O(n^2)
+
+	int cnt = 0;
+
+	for (Point p : points) {
+
+		// with 'p' as pivot, find out how many
+		// valid triangles are present in the
+		// plane
+
+		// 1. find out how many points in the plane
+		// have the same x coordinate as pivot 'p'
+
+		// 2. find out how many points in the plane
+		// have the same y coordinate as pivot 'p'
+
+		int a = 0;
+		int b = 0;
+
+		for (Point q : points) {
+
+			if (q.x == p.x) {
+				a++;
+			}
+
+			if (q.y == p.y) {
+				b++;
+			}
+
+		}
+
+		cnt += (a - 1) * (b - 1);
+
+	}
+
+	cout << cnt << endl;
+
+	return 0;
+}
