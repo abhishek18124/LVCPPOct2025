@@ -46,6 +46,9 @@ int main() {
 		Point(4, 2)
 	};
 
+	// time : O(nlogn)
+	// space : O(n) due to xFreqMap and yFreqMap
+
 	map<int, int> xFreqMap;
 	map<int, int> yFreqMap;
 
@@ -53,8 +56,6 @@ int main() {
 		xFreqMap[p.x]++;
 		yFreqMap[p.y]++;
 	}
-
-	// time : O(n)
 
 	int cnt = 0;
 
