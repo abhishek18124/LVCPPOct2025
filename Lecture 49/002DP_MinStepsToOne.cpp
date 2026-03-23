@@ -126,6 +126,9 @@ int fTopdown(int n, vector<int>& dp) {
 
 }
 
+// time : O(n)
+// space : O(n) due to dp[]
+
 int fBottomUp(int n) {
 
 	vector<int> dp(n + 1); // 0th index is not used
