@@ -34,6 +34,9 @@ public:
 
 	}
 
+	// time : O(nk)
+	// space: n due to fn call stack + n due to dp[] ~ O(n)
+
 	int fTopdown(const vector<int>& arr, int n, int k, int i, vector<int>& dp) {
 
 		// lookup
